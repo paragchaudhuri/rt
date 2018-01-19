@@ -1,0 +1,59 @@
+<rt-scene>
+
+<camera>
+	<lookat vector3="0.0 0.0 1.0" />
+	<eye	vector3="0.0 0.0 0.0" />
+	<up		vector3="0.0 1.0 0.0" />
+	<fov	angle="60 deg" />
+</camera>
+
+<image>
+	<width float="320" />
+	<height float="240" />
+	<bgcolor color="0.0 0.0 0.0" />	
+</image>
+
+<materials>
+	<simplemat id="diffuse">
+		<diffuse color="0.7 0.2 0.2" />
+		<reflect color="0.0 0.0 0.0" />
+		<transmit color="0.0 0.0 0.0" />
+		<eta float="0.0"/>
+		<n float="0"/>
+		<isreflect bool="false"/>
+		<istransmit bool="false"/>
+	</simplemat>
+	<simplemat id="glass">
+		<diffuse color="0.5 0.5 0.5" />
+		<reflect color="0.1 0.1 0.1" />
+		<transmit color="0.9 0.9 0.9" />
+		<eta float="1.5"/>
+		<n float="100" />
+		<isreflect bool="true"/>
+		<istransmit bool="true"/>
+	</simplemat>	
+</materials>
+
+<objects>
+	<sphere material="diffuse">
+		<center vector3="10.0 10.0 10000.0" />
+		<radius float="20.0" />
+	</sphere>
+</objects>
+
+<lights>
+	<pointlight>
+		<position vector3="0.0 600.0 100.0" />
+		<color color="1.0 1.0 1.0" />
+		<ka float="0.2" />
+	</pointlight>
+</lights>
+
+<integrator>
+	<whitted>
+		<depth-of-recursion int="1" />
+	</whitted>
+</integrator>
+
+
+</rt-scene>
