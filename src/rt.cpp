@@ -1,4 +1,7 @@
+#include <resolver.hpp>
+
 #include <rt.hpp>
+
 
 using namespace rt;
 
@@ -26,20 +29,36 @@ void render(const rt::scene_t* scn)
 
 int main(int argc, char **argv)
 {
+	if (argc != 2) 
+		{
+        	std::cerr << "Syntax: " << argv[0] << " <scene.xml>" << std::endl;
+        	return -1;
+		}
+
+	filesystem::path path(argv[1]);
+
 	try
 	{
-		std::string scene_filename("myscene.xml");
-  		rt::scene_t scn(scene_filename);
+		if (path.extension() == "xml") 
+		{
+			std::string scene_filename(argv[1]);
+  			rt::scene_t scn(scene_filename);
 
-  		render(&scn);
+  			render(&scn);
 
-		std::string img_filename = scene_filename;
-    	size_t lastdot = img_filename.find_last_of(".");
-    	if (lastdot != std::string::npos)
-     		img_filename.erase(lastdot, std::string::npos);
-   		img_filename += ".ppm";
+			std::string img_filename = scene_filename;
+    		size_t lastdot = img_filename.find_last_of(".");
+    		if (lastdot != std::string::npos)
+     			img_filename.erase(lastdot, std::string::npos);
+   			img_filename += ".ppm";
   	
-  		scn.img->write(img_filename);
+  			scn.img->write(img_filename);
+  		}
+  		else
+  		{
+  			std::cerr<<"Error: Unknown file type."<<std::endl;
+  			return -1;
+  		}
   } 
   catch (const std::exception &e)
   {
