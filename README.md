@@ -13,7 +13,7 @@ rt can be downloaded by cloning the git repository using
 
 For access to course information including slides and reading material, visit the main [Advanced Computer Graphics course website](https://www.cse.iitb.ac.in/~paragc/teaching/2018/cs775). 
 
-The rt framework and coding assignments will be described on the [assignments page](www.cse.iitb.ac.in/~paragc/teaching/2018/cs775/assignments.shtml).
+The rt framework and coding assignments will be described on the [assignments page](www.cse.iitb.ac.in/~paragc/teaching/2018/cs775/assignment.shtml).
 
 ### Compiling and using rt
 
