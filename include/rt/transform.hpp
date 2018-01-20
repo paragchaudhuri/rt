@@ -1,22 +1,46 @@
+/*
+    This file is part of rt.
+
+    rt is a simple ray tracer meant to be used for teaching ray tracing.
+
+    Copyright (c) 2018 by Parag Chaudhuri
+
+    Some parts of rt are derived from Nori by Wenzel Jacob.
+    https://github.com/wjakob/nori/
+
+    rt is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License Version 3
+    as published by the Free Software Foundation.
+
+    rt is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program. If not, see <http://www.gnu.org/licenses/>.
+*/
+
 #pragma once
-
-#ifndef _TRANSFORM_HPP_
-#define _TRANSFORM_HPP_
-
-#include <fstream>
-#include <Eigen/Dense>
 
 #include <ray.hpp>
 #include <utils.hpp>
 
 namespace rt
 {
+    /**
+     * \brief Implements a 4x4 tranformation. Stores the transformation and its inverse for convenience.
+    **/
 	class transform_t
 	{
 	private:
+        /// The transformation
 		Eigen::Matrix4f t;
+        /// The inverse transformation
     	Eigen::Matrix4f invt;
 	public:
+
+        /// Constructor
 		transform_t(): 
         t(Eigen::Matrix4f::Identity()), invt(Eigen::Matrix4f::Identity()) { }
 
@@ -75,9 +99,7 @@ namespace rt
         	    operator*(_r.direction));
     	}
 
-   
+        /// Print the transformation to the stream
         void print(std::ostream &stream);
 	};
 }
-
-#endif

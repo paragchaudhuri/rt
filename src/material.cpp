@@ -11,16 +11,17 @@ material_t::~material_t()
 std::string material_t::get_name(void) const
 { return name; }
 
-simplemat_t::simplemat_t(std::string _name, color_t _d, color_t _r, color_t _t, float _eta, float _n, bool _is_r, bool _is_t):
-	material_t(_name),d(_d),r(_r),t(_t),eta(_eta),n(_n),is_reflect(_is_r),is_transmit(_is_t)
+simplemat_t::simplemat_t(std::string _name, color_t _kd, color_t _ks, color_t _kr, color_t _kt, float _eta, float _n, bool _is_r, bool _is_t):
+	material_t(_name),kd(_kd),ks(_ks),kr(_kr),kt(_kt),eta(_eta),n(_n),is_reflect(_is_r),is_transmit(_is_t)
 	{ }
 
 simplemat_t::~simplemat_t()
 { }
 
-color_t simplemat_t::get_diffuse(void) const { return d; }
-color_t simplemat_t::get_reflect(void) const { return r; }
-color_t simplemat_t::get_transmit(void) const { return t; }
+color_t simplemat_t::get_diffuse(void) const { return kd; }
+color_t simplemat_t::get_specular(void) const { return ks; }
+color_t simplemat_t::get_reflect(void) const { return kr; }
+color_t simplemat_t::get_transmit(void) const { return kt; }
 
 float simplemat_t::get_eta(void) const { return eta; }
 float simplemat_t::get_shininess(void) const {return n; }
@@ -34,9 +35,10 @@ void simplemat_t::print(std::ostream &stream) const
 	
 	stream<<"Material Properties: -------------------------------"<<std::endl;
 	stream<<"Name: "<<this->get_name()<<std::endl;
-	stream<<"Diffuse: "<<d.format(CommaInitFmt)<<std::endl;
-	stream<<"Reflect: "<<r.format(CommaInitFmt)<<std::endl;
-	stream<<"Transmit: "<<t.format(CommaInitFmt)<<std::endl;
+	stream<<"kd: "<<kd.format(CommaInitFmt)<<std::endl;
+	stream<<"ks: "<<ks.format(CommaInitFmt)<<std::endl;
+	stream<<"kr: "<<kr.format(CommaInitFmt)<<std::endl;
+	stream<<"kt: "<<kt.format(CommaInitFmt)<<std::endl;
 	stream<<"eta: "<<eta<<std::endl;
 	stream<<"Shininess: "<<n<<std::endl;
 	stream<<"Is Reflecting: "<<is_reflect<<std::endl;

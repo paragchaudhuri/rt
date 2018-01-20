@@ -1,4 +1,3 @@
-#include <iostream>
 #include <scene.hpp>
 
 using namespace rt;
@@ -28,6 +27,27 @@ material_t* scene_t::find_material(std::string name, const std::list<material_t*
 	}
 	
 	throw std::invalid_argument("Material from object not found in scene file.");
+}
+
+
+int scene_t::parse_int(XMLElement* _elm, std::string property)
+{
+	return parse_bool(parse_property(_elm, property, "int"));
+}
+
+int scene_t::parse_int(XMLElement* _elm)
+{
+	return parse_float(parse_parameter(_elm, "int"));
+}
+
+int scene_t::parse_int(std::string _val)
+{
+	std::istringstream stream(_val);
+
+	int val;
+	stream >> val;
+
+	return val;
 }
 
 float scene_t::parse_float(XMLElement* _elm, std::string property) 
@@ -70,41 +90,22 @@ bool scene_t::parse_bool(std::string _val)
 	return val;
 }
 
-int scene_t::parse_int(XMLElement* _elm, std::string property)
-{
-	return parse_bool(parse_property(_elm, property, "int"));
-}
-
-int scene_t::parse_int(XMLElement* _elm)
-{
-	return parse_float(parse_parameter(_elm, "int"));
-}
-
-int scene_t::parse_int(std::string _val)
-{
-	std::istringstream stream(_val);
-
-	int val;
-	stream >> val;
-
-	return val;
-}
 
 float scene_t::parse_angle(XMLElement* _elm, std::string _property) 
 {
 	return parse_angle(parse_property(_elm, _property, "angle"));
 }
 
-double scene_t::parse_angle(XMLElement* _elm) 
+float scene_t::parse_angle(XMLElement* _elm) 
 {
 	return parse_angle(parse_parameter(_elm, "angle"));
 }
 
-double scene_t::parse_angle(std::string _val) 
+float scene_t::parse_angle(std::string _val) 
 {
 	std::istringstream stream(_val);	
 
-	double val;
+	float val;
 	std::string unit;
 	stream >> val >> unit;
 
@@ -159,6 +160,9 @@ Eigen::Vector3f scene_t::parse_vector3(std::string _val)
 
 	return res;
 }
+
+
+
 
 bool scene_t::parse_scenefile(void)
 {
@@ -286,6 +290,7 @@ material_t* scene_t::parse_simplemat(XMLElement* _elm)
 	return (material_t*)(new simplemat_t(
 			parse_parameter(_elm, "id"),
 			parse_color(_elm, "diffuse"),
+			parse_color(_elm, "specular"),
 			parse_color(_elm, "reflect"),
 			parse_color(_elm, "transmit"),
 			parse_float(_elm, "eta"),

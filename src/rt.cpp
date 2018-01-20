@@ -5,7 +5,7 @@
 
 using namespace rt;
 
-void render(const rt::scene_t* scn)
+void rt::render(const scene_t* scn)
 {
 	unsigned int w=scn->img->get_width();
 	unsigned int h=scn->img->get_height();
@@ -14,10 +14,10 @@ void render(const rt::scene_t* scn)
 	{
 		for (unsigned int j=0; j<h; j++)
 		{
-			rt::ray_t ray;
+			ray_t ray;
 			int d;
 			Eigen::Vector2f psample=scn->img->sample_pixel(i,j);
-			rt::color_t col = scn->cam->sample_ray(ray, psample);
+			color_t col = scn->cam->sample_ray(ray, psample);
 
 			col *= scn->intg->radiance(scn, ray, d);
 
@@ -44,7 +44,7 @@ int main(int argc, char **argv)
 			std::string scene_filename(argv[1]);
   			rt::scene_t scn(scene_filename);
 
-  			render(&scn);
+  			rt::render(&scn);
 
 			std::string img_filename = scene_filename;
     		size_t lastdot = img_filename.find_last_of(".");

@@ -26,7 +26,10 @@
 #include <cmath>
 #include <fstream>
 #include <iostream>
+#include <list>
 #include <string>
+#include <utility>
+#include <vector>
 
 #include <Eigen/Dense>
 #include <Eigen/Geometry>
@@ -35,6 +38,7 @@ using namespace Eigen;
 
 namespace rt
 {
+	/// A tolerance threshold.
 	const float EPSILON = 1e-4f;
 
 	/* A few useful constants */
@@ -47,17 +51,19 @@ namespace rt
 	#define SQRT_TWO     1.41421356237309504880f
 	#define INV_SQRT_TWO 0.70710678118654752440f
 
-
+	/// Values between -epsilon and epsilon are considered to be zero.
 	inline bool is_zero(const float x)
 	{
 		if ((x < EPSILON) && (x > -EPSILON)) return true; else return false;
 	}
 
+	/// Returns true if the arguments are equal within epsilon tolerance.
 	inline bool is_equal(const float x, const float y)
 	{
 		return is_zero(x-y);
 	}
 
+	/// Returns true if the vectors components are equal between epsilon tolerance
 	inline bool is_equal(const Vector3f& v1, const Vector3f& v2) 
 	{
 		float v1_x = v1.data()[0];
