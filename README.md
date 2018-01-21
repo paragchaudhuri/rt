@@ -1,4 +1,4 @@
-[![rt logo](goo.gl/JHtUSM)](goo.gl/JHtUSM)
+[![rt logo](goo.gl/w4N7sv](goo.gl/w4N7sv)
 
 ## rt version 1
 
