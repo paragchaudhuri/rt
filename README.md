@@ -1,4 +1,4 @@
-[![rt logo](goo.gl/w4N7sv)](goo.gl/w4N7sv)
+[![rt logo](https://www.cse.iitb.ac.in/~paragc/images/rt-logo-small.jpg)](https://www.cse.iitb.ac.in/~paragc/images/rt-logo-small.jpg)
 
 ## rt version 1
 
