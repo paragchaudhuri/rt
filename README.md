@@ -1,3 +1,5 @@
+[![rt logo](goo.gl/JHtUSM)](goo.gl/JHtUSM)
+
 ## rt version 1
 
 rt is a simple ray tracer written in C++. 
