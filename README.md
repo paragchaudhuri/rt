@@ -1,7 +1,5 @@
 [![rt logo](https://www.cse.iitb.ac.in/~paragc/images/rt-logo-small.jpg)](https://www.cse.iitb.ac.in/~paragc/images/rt-logo-small.jpg)
 
-## rt version 1
-
 rt is a simple ray tracer written in C++. 
 
 It provides a basic framework to complete the rendering assignments from the Advanced Computer Graphics course taught as IIT Bombay. 
