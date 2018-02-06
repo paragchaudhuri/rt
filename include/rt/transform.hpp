@@ -35,30 +35,30 @@ namespace rt
 	{
 	private:
         /// The transformation
-		Eigen::Matrix4f t;
+		Eigen::Matrix4d t;
         /// The inverse transformation
-    	Eigen::Matrix4f invt;
+    	Eigen::Matrix4d invt;
 	public:
 
         /// Constructor
 		transform_t(): 
-        t(Eigen::Matrix4f::Identity()), invt(Eigen::Matrix4f::Identity()) { }
+        t(Eigen::Matrix4d::Identity()), invt(Eigen::Matrix4d::Identity()) { }
 
     	/// Create a new transform_t instance for the given matrix 
-    	transform_t(const Eigen::Matrix4f &_t);
+    	transform_t(const Eigen::Matrix4d &_t);
 
     	/// Create a new transform_t instance for the given matrix and its inverse
-    	transform_t(const Eigen::Matrix4f &_t, const Eigen::Matrix4f &_invt) 
+    	transform_t(const Eigen::Matrix4d &_t, const Eigen::Matrix4d &_invt) 
         : t(_t), invt(_invt) { }
 
     	/// Return the underlying matrix
-    	const Eigen::Matrix4f &get_matrix() const 
+    	const Eigen::Matrix4d &get_matrix() const 
     	{
    		    return t;
     	}
 
     	/// Return the inverse of the underlying matrix
-    	const Eigen::Matrix4f &get_inverse_matrix() const 
+    	const Eigen::Matrix4d &get_inverse_matrix() const 
     	{
        		 return invt;
     	}
@@ -73,21 +73,21 @@ namespace rt
    		transform_t operator*(const transform_t &_t) const;
 
     	/// Apply the homogeneous transformation to a 3D vector
-    	Vector3f operator*(const Vector3f &_v) const 
+    	Vector3d operator*(const Vector3d &_v) const 
     	{
     	    return t.topLeftCorner<3,3>() * _v;
     	}
 
     	/// Apply the homogeneous transformation to a 3D normal
-    	Vector3f transform_normal(const Vector3f &_n) const 
+    	Vector3d transform_normal(const Vector3d &_n) const 
     	{
     	    return invt.topLeftCorner<3, 3>().transpose() * _n;
     	}
 
    		/// transform_t a point by an arbitrary matrix in homogeneous coordinates
-    	Vector3f transform_point(const Vector3f &_p) const 
+    	Vector3d transform_point(const Vector3d &_p) const 
     	{
-     	   Vector4f result = t * Vector4f(_p[0], _p[1], _p[2], 1.0f);
+     	   Vector4d result = t * Vector4d(_p[0], _p[1], _p[2], 1.0f);
      	   return result.head<3>() / result.w();
     	}
 

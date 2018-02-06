@@ -56,7 +56,7 @@ namespace rt
 		virtual std::string get_name(void) const = 0;
 
 		///Returns the radiance estimate along ray _ray, for scene scn, at bounce depth d.
-		virtual color_t radiance(const scene_t* scn, ray_t& _ray, int& d) const = 0;
+		virtual color_t radiance(const scene_t* scn, ray_t& _ray, int d) const = 0;
 	};
 
 	/**
@@ -77,6 +77,6 @@ namespace rt
 		virtual std::string get_name(void) const {return "whitted";}
 
 		/// Returns the radiance estimate along ray _ray, for scene scn, at bounce depth d.
-		virtual color_t radiance(const scene_t* scn, ray_t& _ray, int& d) const;
+		virtual color_t radiance(const scene_t* scn, ray_t& _ray, int d) const;
 	};
 }

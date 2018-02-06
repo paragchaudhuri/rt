@@ -38,10 +38,10 @@ namespace rt
 	{
 	private:
 		/// Sphere center
-		Eigen::Vector3f center;
+		Eigen::Vector3d center;
 
 		/// Sphere radius
-		float radius;
+		double radius;
 
 		/// Sphere material
 		material_t* mat;
@@ -50,7 +50,7 @@ namespace rt
 		/// Constructor
 		sphere_t(material_t* _mat);
 		/// Constructor
-		sphere_t(material_t* _mat, Eigen::Vector3f _c, float _r);
+		sphere_t(material_t* _mat, Eigen::Vector3d _c, double _r);
 		/// Destuctor
 		virtual ~sphere_t();
 
@@ -64,7 +64,7 @@ namespace rt
 		bool intersect(hit_t& result, const ray_t& _ray) const;
 
 		/// Returns the normal to the surface at point _p.
-		Eigen::Vector3f get_normal(Eigen::Vector3f& _p) const;
+		Eigen::Vector3d get_normal(Eigen::Vector3d& _p) const;
 
 		/// Returns the material for the sphere.
 		material_t* get_material(void) const;

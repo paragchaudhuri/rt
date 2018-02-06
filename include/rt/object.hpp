@@ -33,7 +33,7 @@ namespace rt
 	class object_t;
 
 	/// Convenience typedef to reprent a hit (intersection) point
-	typedef std::pair<const object_t*, float> hit_t; 
+	typedef std::pair<const object_t*, double> hit_t; 
 
 	/**
 	 * \brief This is an abstract base class to represent objects in rt.
@@ -57,7 +57,7 @@ namespace rt
 		virtual bool intersect(hit_t& result, const ray_t& _ray) const = 0;
 
 		/// Returns the normal to the surface at point _p.
-		virtual Vector3f get_normal(Vector3f& _p) const = 0;
+		virtual Vector3d get_normal(Vector3d& _p) const = 0;
 
 		/// Returns the material for the object.
 		virtual material_t* get_material(void) const = 0; 

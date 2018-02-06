@@ -56,9 +56,14 @@ namespace rt
 		virtual color_t get_reflect(void) const = 0;
 
 		/// Returns the coefficient of refraction
-		virtual float get_eta(void) const = 0;
+		virtual double get_eta(void) const = 0;
 		/// Returns the shininess value
-		virtual float get_shininess(void) const = 0;
+		virtual double get_shininess(void) const = 0;
+
+	        /// Returns true if surface reflects, else returns false.
+	        virtual bool get_is_reflect(void) const = 0;
+	        /// Returns false if surface transmits, else returns false.
+	        virtual bool get_is_transmit(void) const = 0;
 
 		/// Prints information about the material to the stream.
 		virtual void print(std::ostream &stream) const = 0;
@@ -74,7 +79,7 @@ namespace rt
 		/// Material Coefficients
 		color_t kd, ks, kr, kt;
 		///  Material Coefficients
-		float eta, n;
+		double eta, n;
 
 		/// Does the surface reflect any illumination.
 		bool is_reflect;
@@ -83,7 +88,7 @@ namespace rt
 
 	public:
 		/// Constructor.
-		simplemat_t(std::string _name, color_t _kd, color_t _ks, color_t _kr, color_t _kt, float _eta, float _n, bool _is_r, bool _is_t);
+		simplemat_t(std::string _name, color_t _kd, color_t _ks, color_t _kr, color_t _kt, double _eta, double _n, bool _is_r, bool _is_t);
 		/// Destructor.
 		virtual ~simplemat_t();
 
@@ -97,9 +102,9 @@ namespace rt
 		virtual color_t get_reflect(void) const;
 
 		/// Returns the coefficient of refraction
-		virtual float get_eta(void) const;
+		virtual double get_eta(void) const;
 		/// Returns the shininess value
-		virtual float get_shininess(void) const;
+		virtual double get_shininess(void) const;
 
 		/// Returns true if surface reflects, else returns false.
 		bool get_is_reflect(void) const;

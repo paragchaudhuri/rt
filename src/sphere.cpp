@@ -3,22 +3,22 @@
 using namespace rt;
 
 sphere_t::sphere_t(material_t* _mat):center(0.0,0.0,0.0),radius(1.0),mat(_mat) { }
-sphere_t::sphere_t(material_t* _mat, Eigen::Vector3f _c, float _r): center(_c), radius(_r), mat(_mat) { }
+sphere_t::sphere_t(material_t* _mat, Eigen::Vector3d _c, double _r): center(_c), radius(_r), mat(_mat) { }
 
 sphere_t::~sphere_t() { }
 
 bool sphere_t::intersect(hit_t& result, const ray_t& _ray) const
 {
-	Vector3f r2c = center - _ray.origin;
-	const float b = r2c.dot(_ray.direction);
-	float d = b*b - r2c.dot(r2c) + radius*radius;
+	Vector3d r2c = center - _ray.origin;
+	const double b = r2c.dot(_ray.direction);
+	double d = b*b - r2c.dot(r2c) + radius*radius;
 
 	if (d < 0)
 		return false;
 	else
 		d = sqrt(d);
 
-	float t;
+	double t;
 
 	t=b-d;
 	if (!is_zero(t))
@@ -37,9 +37,9 @@ bool sphere_t::intersect(hit_t& result, const ray_t& _ray) const
 
 }
 
-Eigen::Vector3f sphere_t::get_normal(Eigen::Vector3f& _p) const
+Eigen::Vector3d sphere_t::get_normal(Eigen::Vector3d& _p) const
 {
-	Eigen::Vector3f normal = _p - center;
+	Eigen::Vector3d normal = _p - center;
 	normal.normalize();
 
 	return normal;

@@ -30,16 +30,16 @@ namespace rt
     /**
      * \brief Class to represent a Red, Green, Blue color value.
      */
-	class color_t : public Eigen::Array3f 
+	class color_t : public Eigen::Array3d 
 	{
 	public:
-		typedef Eigen::Array3f base;
+		typedef Eigen::Array3d base;
 
         ///Constructor to initialize color value to a constant for all components.
-		color_t(float _val=0.f);
+		color_t(double _val=0.f);
 
         ///Constructor to initialize color value to desired values for the components.
-		color_t(float _r, float _g, float _b);
+		color_t(double _r, double _g, double _b);
 
 		/// Construct a color vector from ArrayBase (needed to play nice with Eigen).
     	template <typename Derived> color_t(const Eigen::ArrayBase<Derived>& p): base(p) { }
@@ -52,19 +52,19 @@ namespace rt
     	}
 
     	/// Return the red channel.
-    	float &r() { return x(); }
+    	double &r() { return x(); }
         /// Return the red channel (const).
-    	const float &r() const { return x(); }
+    	const double &r() const { return x(); }
     	/// Return the green channel.
-    	float &g() { return y(); }
+    	double &g() { return y(); }
         /// Return the green channel (const).
-    	const float &g() const { return y(); }
+    	const double &g() const { return y(); }
     	/// Return the blue channel.
-    	float &b() { return z(); }
+    	double &b() { return z(); }
         /// Return the blue channel (const).
-    	const float &b() const { return z(); }
+    	const double &b() const { return z(); }
         
-        ///Clamp the color value to a non-negative float on each channel.
+        ///Clamp the color value to a non-negative double on each channel.
         color_t clamp(void) const;
 
     	/// Check if the color vector contains a NaN/Inf/negative value.

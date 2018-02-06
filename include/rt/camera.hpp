@@ -41,19 +41,19 @@ namespace rt
 		/// Since the cam2world is set to identity by default, these are not used.
 		/// To use these, add the computation of cam2world to init()
 		/// Default eye is at (0,0,0), lookat is (0,0,1), up is (0,1,0)
-		Vector3f lookat, eye, up;
+		Vector3d lookat, eye, up;
 
 		/// Horizontal field of view
-		float fov;
+		double fov;
 
 		/// Distance to near plane along lookat
-		float near;
+		double near;
 
 		/// Distance to far plane along lookat
-		float far;
+		double far;
 
 		/// Aspect ration of the image on the near plane
-		float aspect;
+		double aspect;
 
 		/// VCS to CCS transform
 		transform_t image2cam;
@@ -69,7 +69,7 @@ namespace rt
 		camera_t();
 		
 		/// Constructor
-		camera_t(const Vector3f _lat, const Vector3f _eye, const Vector3f _up, float _fov=30.0, float near=1e-4f, float far=1e4f);
+		camera_t(const Vector3d _lat, const Vector3d _eye, const Vector3d _up, double _fov=30.0, double near=1e-4f, double far=1e4f);
 		
 		/// Copy Constructor
 		camera_t(const camera_t &_cam);
@@ -78,19 +78,19 @@ namespace rt
 		~camera_t();
 
 		/// Return the lookat
-		const Vector3f get_lookat(void);
+		const Vector3d get_lookat(void);
 		
 		/// Return the eye
-		const Vector3f get_eye(void);
+		const Vector3d get_eye(void);
 
 		/// Returns the up vector
-		const Vector3f get_up(void);
+		const Vector3d get_up(void);
 
 		/// Returns the fov
-		const float get_fov(void);
+		const double get_fov(void);
 
 		/// Sets the aspect ratio, and recomputes transforms.
-		void set_aspect(float _a) { aspect=_a; init(); }
+		void set_aspect(double _a) { aspect=_a; init(); }
 
 		/// Generate a ray from the camera center in the direction of _pixelpos
 		color_t sample_ray(ray_t &ray, const Vector2f& _pixelpos) const;

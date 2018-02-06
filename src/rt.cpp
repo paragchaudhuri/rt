@@ -15,7 +15,7 @@ void rt::render(const scene_t* scn)
 		for (unsigned int j=0; j<h; j++)
 		{
 			ray_t ray;
-			int d;
+			int d=0;
 			Eigen::Vector2f psample=scn->img->sample_pixel(i,j);
 			color_t col = scn->cam->sample_ray(ray, psample);
 

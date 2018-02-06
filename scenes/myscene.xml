@@ -5,11 +5,13 @@
 	<eye	vector3="0.0 0.0 0.0" />
 	<up		vector3="0.0 1.0 0.0" />
 	<fov	angle="60 deg" />
+	<near   double="0.0001" />
+	<far    double="1000.0" />
 </camera>
 
 <image>
-	<width float="320" />
-	<height float="240" />
+	<width double="320" />
+	<height double="240" />
 	<bgcolor color="0.0 0.0 0.0" />	
 </image>
 
@@ -19,8 +21,8 @@
 		<specular color="0.0 0.0 0.0" />	
 		<reflect color="0.0 0.0 0.0" />
 		<transmit color="0.0 0.0 0.0" />
-		<eta float="0.0"/>
-		<n float="0"/>
+		<eta double="0.0"/>
+		<n double="0"/>
 		<isreflect bool="false"/>
 		<istransmit bool="false"/>
 	</simplemat>
@@ -29,8 +31,8 @@
 		<specular color="0.1 0.1 0.1" />
 		<reflect color="0.1 0.1 0.1" />
 		<transmit color="0.9 0.9 0.9" />
-		<eta float="1.5"/>
-		<n float="100" />
+		<eta double="1.5"/>
+		<n double="100" />
 		<isreflect bool="true"/>
 		<istransmit bool="true"/>
 	</simplemat>	
@@ -38,8 +40,8 @@
 
 <objects>
 	<sphere material="diffuse">
-		<center vector3="10.0 10.0 10000.0" />
-		<radius float="20.0" />
+		<center vector3="10.0 10.0 100.0" />
+		<radius double="20.0" />
 	</sphere>
 </objects>
 
@@ -47,7 +49,7 @@
 	<pointlight>
 		<position vector3="0.0 600.0 100.0" />
 		<color color="1.0 1.0 1.0" />
-		<ka float="0.2" />
+		<ka double="0.2" />
 	</pointlight>
 </lights>
 

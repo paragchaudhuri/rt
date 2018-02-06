@@ -70,12 +70,12 @@ namespace rt
     /// Converts a string value to int
     int parse_int(std::string _val);
 
-    ///  Parse an float property.
-    float parse_float(XMLElement* _elm, std::string property);
-    // Returns the float property value.
-    float parse_float(XMLElement* _elm);
-    /// Converts a string value to float
-    float parse_float(std::string _val);
+    ///  Parse an double property.
+    double parse_double(XMLElement* _elm, std::string property);
+    // Returns the double property value.
+    double parse_double(XMLElement* _elm);
+    /// Converts a string value to double
+    double parse_double(std::string _val);
 
     ///  Parse an bool property.
     bool parse_bool(XMLElement* _elm, std::string property);
@@ -85,11 +85,11 @@ namespace rt
     bool parse_bool(std::string _val);
 
     /// Parse an angle property. An angle can have units deg or rad.
-    float parse_angle(XMLElement* _elm, std::string _property);
+    double parse_angle(XMLElement* _elm, std::string _property);
     /// Returns the angle property value.
-    float parse_angle(XMLElement* _elm);
-    /// Converts a string angle value to float.
-    float parse_angle(std::string _val);
+    double parse_angle(XMLElement* _elm);
+    /// Converts a string angle value to double.
+    double parse_angle(std::string _val);
 
     ///  Parse an color property.
     color_t parse_color(XMLElement* _elm, std::string _property);
@@ -98,12 +98,12 @@ namespace rt
     /// Converts a string color to color_t
     color_t parse_color(std::string _val);
 
-    ///  Parse an vector3 property. We use Eigen::Vector3f as our vector.
-    Eigen::Vector3f parse_vector3(XMLElement* _elm, std::string _property);
+    ///  Parse an vector3 property. We use Eigen::Vector3d as our vector.
+    Eigen::Vector3d parse_vector3(XMLElement* _elm, std::string _property);
     // Returns the vector3 property value.
-    Eigen::Vector3f parse_vector3(XMLElement* _elm);
-    /// Converts a string value to Vector3f
-    Eigen::Vector3f parse_vector3(std::string _val);
+    Eigen::Vector3d parse_vector3(XMLElement* _elm);
+    /// Converts a string value to Vector3d
+    Eigen::Vector3d parse_vector3(std::string _val);
 
 
 

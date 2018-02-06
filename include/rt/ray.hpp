@@ -34,28 +34,28 @@ namespace rt
 	{
 	public:
 		/// Ray origin.
-		Vector3f origin;
+		Vector3d origin;
 		/// Ray direction.
-		Vector3f direction;
+		Vector3d direction;
 
 		/// Max and min t values on the ray - an intersection is valid if it lies between these two values.
-		float mint, maxt;
+		double mint, maxt;
 
 		/// Constructor.
 		ray_t();
 		/// Constructor.
-		ray_t(const Vector3f& _o, const Vector3f& _d);
+		ray_t(const Vector3d& _o, const Vector3d& _d);
 		/// Constructor.
-		ray_t(const Vector3f& _o, const Vector3f& _d, const float _mint, const float _maxt);
+		ray_t(const Vector3d& _o, const Vector3d& _d, const double _mint, const double _maxt);
 		/// Copy Constructor.
 		ray_t(const ray_t &_ray);
 		/// Copy Constructor, with modifications.
-		ray_t(const ray_t &_ray, float _mint, float _maxt);
+		ray_t(const ray_t &_ray, double _mint, double _maxt);
 
 		/// Destructions
 		virtual ~ray_t();
 
 		/// Returns a point along the ray at _t
-		const Vector3f operator()(const float _t);
+		const Vector3d operator()(const double _t);
 	};
 }

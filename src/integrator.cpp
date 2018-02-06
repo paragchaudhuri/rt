@@ -4,12 +4,12 @@
 
 using namespace rt;
 
-color_t whitted_integrator_t::radiance(const scene_t* _scn, ray_t& _ray, int& d) const
+color_t whitted_integrator_t::radiance(const scene_t* _scn, ray_t& _ray, int d) const
 {
 	bool found_intersection=false;
 	std::vector<object_t*>::const_iterator oit;
 	hit_t hit, minhit;
-	Eigen::Vector3f hitpt, normal;
+	Eigen::Vector3d hitpt, normal;
 
 	for (oit=_scn->objs.begin(); oit!=_scn->objs.end(); oit++)
 	{

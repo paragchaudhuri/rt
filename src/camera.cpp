@@ -37,10 +37,10 @@ using namespace rt;
 */
 void camera_t::init(void)
 {
-	float recip = 1.0f / (far - near);
-    float cot = 1.0f / std::tan(deg2rad(fov / 2.0f));
+	double recip = 1.0 / (far - near);
+	double cot = 1.0 / std::tan(fov / 2.0);
 
-    Eigen::Matrix4f perspective;
+    Eigen::Matrix4d perspective;
     perspective <<
         cot, 0,   0,   0,
         0, cot,   0,   0,
@@ -50,49 +50,49 @@ void camera_t::init(void)
 	
     
     image2cam = transform_t( 
-        Eigen::DiagonalMatrix<float, 3>(Vector3f(-0.5f, -0.5f * aspect, 1.0f)) *
-        Eigen::Translation<float, 3>(-1.0f, -1.0f/aspect, 0.0f) * perspective).inverse();
+        Eigen::DiagonalMatrix<double, 3>(Vector3d(-0.5, -0.5 * aspect, 1.0)) *
+        Eigen::Translation<double, 3>(-1.0, -1.0/aspect, 0.0) * perspective).inverse();
 
     cam2world = transform_t();
 }
 
 camera_t::camera_t()
 {
-	lookat=Vector3f(0.0,0.0,1.0);
-	eye=Vector3f(0.0,0.0,0.0);
-	up=Vector3f(0.0,1.0,0.0);
+	lookat=Vector3d(0.0,0.0,1.0);
+	eye=Vector3d(0.0,0.0,0.0);
+	up=Vector3d(0.0,1.0,0.0);
 	fov=60.0;
-	near=1e-4f;
-	far=1e4f;
-	aspect=640.0f/480.0f;
+	near=1e-4;
+	far=1e4;
+	aspect=640.0/480.0;
 
 	init();
 }
 		
-camera_t::camera_t(const Vector3f _lat, const Vector3f _eye, const Vector3f _up, float _fov, float _near, float _far):
+camera_t::camera_t(const Vector3d _lat, const Vector3d _eye, const Vector3d _up, double _fov, double _near, double _far):
 	lookat(_lat), eye(_eye), up(_up), fov(_fov), near(_near), far(_far)
-{ aspect=640.0f/480.0f; init(); }
+{ aspect=640.0/480.0; init(); }
 
 camera_t::camera_t(const camera_t &_cam):
 	lookat(_cam.lookat), eye(_cam.eye), up(_cam.up),fov(_cam.fov), near(_cam.near), far(_cam.far)
-{ aspect=640.0f/480.0f; init(); }
+{ aspect=640.0/480.0; init(); }
 
 camera_t::~camera_t()
 { }
 
-const Vector3f camera_t::get_lookat(void) {return lookat;}
-const Vector3f camera_t::get_eye(void) {return eye;}
-const Vector3f camera_t::get_up(void) {return up;}
-const float camera_t::get_fov(void) {return fov;}
+const Vector3d camera_t::get_lookat(void) {return lookat;}
+const Vector3d camera_t::get_eye(void) {return eye;}
+const Vector3d camera_t::get_up(void) {return up;}
+const double camera_t::get_fov(void) {return fov;}
 
 color_t camera_t::sample_ray(ray_t &ray, const Vector2f& _pixelpos) const
 {
-	Vector3f pt(_pixelpos.x(), _pixelpos.y(), 0.0);
- 	Vector3f near_p= image2cam.transform_point(pt);
- 	Vector3f d = near_p.normalized();
-	float onebyz = 1.0f/d.z();
+	Vector3d pt(_pixelpos.x(), _pixelpos.y(), 0.0);
+ 	Vector3d near_p= image2cam.transform_point(pt);
+ 	Vector3d d = near_p.normalized();
+	double onebyz = 1.0/d.z();
 
-    ray.origin = cam2world.transform_point(Vector3f(0.0f,0.0f,0.0f));
+    ray.origin = cam2world.transform_point(Vector3d(0.0,0.0,0.0));
     ray.direction = cam2world * d;
 
     ray.mint = near * onebyz;

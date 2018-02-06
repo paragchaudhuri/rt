@@ -25,20 +25,20 @@
 
 using namespace rt;
 
-color_t::color_t(float _val) : base(_val,_val,_val) { }
+color_t::color_t(double _val) : base(_val,_val,_val) { }
 
-color_t::color_t(float _r, float _g, float _b): base(_r,_g,_b) { }
+color_t::color_t(double _r, double _g, double _b): base(_r,_g,_b) { }
 
 color_t color_t::clamp(void) const 
 { 
-	return color_t(std::max(r(), 0.0f), std::max(g(), 0.0f), std::max(b(), 0.0f)); 
+	return color_t(std::max(r(), 0.0), std::max(g(), 0.0), std::max(b(), 0.0)); 
 }
 
 bool color_t::is_valid(void) const
 {
 	for (int i=0; i<3; ++i) 
 	{
-        float value = coeff(i);
+        double value = coeff(i);
         if (value < 0 || !std::isfinite(value))
             return false;
     }
@@ -49,5 +49,5 @@ void color_t::print(std::ostream &stream)
 {
 	Eigen::IOFormat CommaInitFmt(Eigen::StreamPrecision, Eigen::DontAlignCols, ", ", ", ", "", "", "[ ", " ]");
 	
-	stream<<Eigen::Vector3f(r(),g(),b()).format(CommaInitFmt)<<std::endl;
+	stream<<Eigen::Vector3d(r(),g(),b()).format(CommaInitFmt)<<std::endl;
 }

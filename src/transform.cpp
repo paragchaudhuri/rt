@@ -2,7 +2,7 @@
 
 using namespace rt;
 
-transform_t::transform_t(const Eigen::Matrix4f &_t)
+transform_t::transform_t(const Eigen::Matrix4d &_t)
     : t(_t), invt(_t.inverse()) { }
 
 transform_t transform_t::operator*(const transform_t &_t) const 

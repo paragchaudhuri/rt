@@ -27,7 +27,7 @@ using namespace rt;
 
 image_t::image_t(int _w, int _h, color_t _bgc):width(_w),height(_h),bgcolor(_bgc)
 {
-	aspect = float(width)/float(height);
+	aspect = double(width)/double(height);
 	data = new char[width*height*3]; 
 }
 
@@ -38,21 +38,21 @@ image_t::~image_t()
 
 int image_t::get_width(void) const {return width; }
 int image_t::get_height(void) const {return height; }
-float image_t::get_aspect(void) const {return aspect; }
+double image_t::get_aspect(void) const {return aspect; }
 
 color_t image_t::get_bgcolor(void) const {return bgcolor; }
 
 Eigen::Vector2f image_t::sample_pixel(unsigned int _x, unsigned int _y) const
 {
-	return Eigen::Vector2f(float(_x)/width, float(_y)/height);
+	return Eigen::Vector2f(double(_x)/width, double(_y)/height);
 }
 
 color_t image_t::get_pixel(unsigned int _x, unsigned int _y) const
 {
 	int pos=(_y)*width*3+(_x)*3;
-	float r=float(data[pos])/255.0f;
-	float g=float(data[pos+1])/255.0f;
-	float b=float(data[pos+2])/255.0f;
+	double r=double(data[pos])/255.0;
+	double g=double(data[pos+1])/255.0;
+	double b=double(data[pos+2])/255.0;
 	return color_t(r,g,b);
 }
 
