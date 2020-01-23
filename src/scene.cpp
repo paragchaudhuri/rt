@@ -85,7 +85,7 @@ bool scene_t::parse_bool(std::string _val)
 	std::istringstream stream(_val);
 
 	bool val;
-	stream >> val;
+	stream >> std::boolalpha >> val;
 
 	return val;
 }
