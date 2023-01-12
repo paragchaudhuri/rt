@@ -17,7 +17,9 @@ The rt framework and coding assignments will be described on the [assignments pa
 
 ### Compiling and using rt
 
-Run `make` to compile rt.
+Run `make` to compile rt. 
+
+You may have to change paths in the makefile to make it match your system.
 
 Then test it out with the provided scene file by running
 
