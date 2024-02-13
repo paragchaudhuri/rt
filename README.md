@@ -32,7 +32,7 @@ rt is a simple ray tracer framework written in C++.
 
 ### Generating Documentation
 - Documentation can be found in the `docs/html` folder. 
-- look at `doc/html/namespaces.html` to begin.
+- Look at `doc/html/namespaces.html` to begin.
 - To generate the documentation from scratch, first install `doxygen` and `graphviz` and then run
   `make doc`
 
