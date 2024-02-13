@@ -1,0 +1,4 @@
+<map id="rt::camera_t" name="rt::camera_t">
+<area shape="rect" id="node1" title="A camera class that implements a perspective camera." alt="" coords="13,109,114,136"/>
+<area shape="rect" id="node2" href="$classrt_1_1transform__t.html" title="Implements a 4x4 tranformation. Stores the transformation and its inverse for convenience." alt="" coords="5,5,121,32"/>
+</map>

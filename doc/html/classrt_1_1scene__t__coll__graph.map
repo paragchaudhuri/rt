@@ -1,0 +1,9 @@
+<map id="rt::scene_t" name="rt::scene_t">
+<area shape="rect" id="node1" title="This is the scence class. It represents the entire scene that rt reads from the scene file." alt="" coords="151,275,242,301"/>
+<area shape="rect" id="node2" href="$classrt_1_1camera__t.html" title="A camera class that implements a perspective camera." alt="" coords="13,185,114,212"/>
+<area shape="rect" id="node3" href="$classrt_1_1transform__t.html" title="Implements a 4x4 tranformation. Stores the transformation and its inverse for convenience." alt="" coords="5,81,121,108"/>
+<area shape="rect" id="node4" href="$classrt_1_1integrator__t.html" title="This is the abstract base class for all integrators. The integrator computes the radiance estimate al..." alt="" coords="139,185,255,212"/>
+<area shape="rect" id="node5" href="$classrt_1_1image__t.html" title="This class represents the image that gets rendered by rt." alt="" coords="279,185,373,212"/>
+<area shape="rect" id="node6" href="$classrt_1_1color__t.html" title="Class to represent a Red, Green, Blue color value." alt="" coords="284,81,368,108"/>
+<area shape="rect" id="node7" title=" " alt="" coords="267,5,385,32"/>
+</map>

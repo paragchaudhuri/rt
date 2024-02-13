@@ -1,0 +1,4 @@
+<map id="rt::whitted_integrator_t" name="rt::whitted_integrator_t">
+<area shape="rect" id="node1" title="This is the Whitted integrator &#45; this implements standard whitted raytracing." alt="" coords="5,80,177,107"/>
+<area shape="rect" id="node2" href="$classrt_1_1integrator__t.html" title="This is the abstract base class for all integrators. The integrator computes the radiance estimate al..." alt="" coords="33,5,149,32"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="rt::sphere_t" name="rt::sphere_t">
+<area shape="rect" id="node1" title="The sphere object class." alt="" coords="65,95,161,121"/>
+<area shape="rect" id="node2" href="$classrt_1_1object__t.html" title="This is an abstract base class to represent objects in rt." alt="" coords="5,5,97,32"/>
+<area shape="rect" id="node3" href="$classrt_1_1material__t.html" title="This is the abstract base class for all materials in rt." alt="" coords="122,5,229,32"/>
+</map>

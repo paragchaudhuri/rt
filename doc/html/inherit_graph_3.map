@@ -1,0 +1,4 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classrt_1_1integrator__t.html" title="This is the abstract base class for all integrators. The integrator computes the radiance estimate al..." alt="" coords="5,5,121,32"/>
+<area shape="rect" id="node2" href="$classrt_1_1whitted__integrator__t.html" title="This is the Whitted integrator &#45; this implements standard whitted raytracing." alt="" coords="169,5,341,32"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classrt_1_1light__t.html" title="This is the abstract base class for lights. The light is responsible for returning its direct illumin..." alt="" coords="5,5,87,32"/>
+<area shape="rect" id="node2" href="$classrt_1_1point__light__t.html" title="This is the class for a positional point light source." alt="" coords="135,5,256,32"/>
+</map>

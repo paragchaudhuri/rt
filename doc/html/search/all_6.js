@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['g_0',['g',['../classrt_1_1color__t.html#a627f4c51d5c97ca8e919781f6b67f1a2',1,'rt::color_t::g() const'],['../classrt_1_1color__t.html#a3687031ba96e7ecacd0fc6e71bf9fe83',1,'rt::color_t::g()']]],
+  ['get_5faspect_1',['get_aspect',['../classrt_1_1image__t.html#a09e80a330d20c90f3d855f6b3dc29db3',1,'rt::image_t']]],
+  ['get_5fbgcolor_2',['get_bgcolor',['../classrt_1_1image__t.html#aa77360fc9cce2de950198dbee30d1fda',1,'rt::image_t']]],
+  ['get_5fdiffuse_3',['get_diffuse',['../classrt_1_1material__t.html#a7c93e17be31cedc1180ce5eb57082b05',1,'rt::material_t::get_diffuse()'],['../classrt_1_1simplemat__t.html#aef7ccf70578198b695a737ba4839df51',1,'rt::simplemat_t::get_diffuse()']]],
+  ['get_5feta_4',['get_eta',['../classrt_1_1material__t.html#ad1a5101161ce1d45a1a3b43894f8ff6c',1,'rt::material_t::get_eta()'],['../classrt_1_1simplemat__t.html#a898039eaf7cfad43f3e58c8e2e7e1fff',1,'rt::simplemat_t::get_eta()']]],
+  ['get_5feye_5',['get_eye',['../classrt_1_1camera__t.html#a228d3612ba5e14b0f3920ac4098d1fe2',1,'rt::camera_t']]],
+  ['get_5ffov_6',['get_fov',['../classrt_1_1camera__t.html#a6eb9d5ae5d7f28df86e627374647c52e',1,'rt::camera_t']]],
+  ['get_5fheight_7',['get_height',['../classrt_1_1image__t.html#a0131b64673ed21fc371d6c14ef927321',1,'rt::image_t']]],
+  ['get_5finverse_5fmatrix_8',['get_inverse_matrix',['../classrt_1_1transform__t.html#ac25b58dd7756c6f4666bcbe1710abc47',1,'rt::transform_t']]],
+  ['get_5fis_5freflect_9',['get_is_reflect',['../classrt_1_1material__t.html#aadc981a7e481ce352b3c3a8a052503f0',1,'rt::material_t::get_is_reflect()'],['../classrt_1_1simplemat__t.html#ab3c12c81ad69fceb2edc8ce7fe6363fe',1,'rt::simplemat_t::get_is_reflect()']]],
+  ['get_5fis_5ftransmit_10',['get_is_transmit',['../classrt_1_1material__t.html#ab22417256ef2ba2dac31e80bb03b5065',1,'rt::material_t::get_is_transmit()'],['../classrt_1_1simplemat__t.html#ab0ca295f0bcf2a3d296b27efe24b192d',1,'rt::simplemat_t::get_is_transmit()']]],
+  ['get_5flookat_11',['get_lookat',['../classrt_1_1camera__t.html#a96043fff389ca7f67b2f72cd1eb58da4',1,'rt::camera_t']]],
+  ['get_5fmaterial_12',['get_material',['../classrt_1_1object__t.html#af7db5fef6c1dd8c0f3e27399431eb629',1,'rt::object_t::get_material()'],['../classrt_1_1sphere__t.html#a07ddecfb33a77b142e5bd515197998f0',1,'rt::sphere_t::get_material()']]],
+  ['get_5fmatrix_13',['get_matrix',['../classrt_1_1transform__t.html#a0884b66d29dcd0adafe2ef57d3b32777',1,'rt::transform_t']]],
+  ['get_5fname_14',['get_name',['../classrt_1_1whitted__integrator__t.html#a944bce7625baefe497d5801d4128f9dc',1,'rt::whitted_integrator_t::get_name()'],['../classrt_1_1material__t.html#ac589a509e6c3ad4355d9a8070484c72e',1,'rt::material_t::get_name()'],['../classrt_1_1object__t.html#aa8f7850c7824cef35ed2e4285dca5746',1,'rt::object_t::get_name()'],['../classrt_1_1sphere__t.html#af66906b534bae117066f2794db752908',1,'rt::sphere_t::get_name()'],['../classrt_1_1integrator__t.html#a14394624bc2a15f883ab46fef434ee34',1,'rt::integrator_t::get_name()']]],
+  ['get_5fnormal_15',['get_normal',['../classrt_1_1object__t.html#ad723ef47e4ba921b1742c00cac921dc5',1,'rt::object_t::get_normal()'],['../classrt_1_1sphere__t.html#aa372b7f402dcf999ce8d1ee9210f5426',1,'rt::sphere_t::get_normal()']]],
+  ['get_5fpixel_16',['get_pixel',['../classrt_1_1image__t.html#a1058c8d8fdc75ed4c310d67ae49ebdc3',1,'rt::image_t']]],
+  ['get_5freflect_17',['get_reflect',['../classrt_1_1simplemat__t.html#a603e30cf157f3dc03daaed03572dd2fe',1,'rt::simplemat_t::get_reflect()'],['../classrt_1_1material__t.html#ac4e4e768752adc69dba9160c7255f37e',1,'rt::material_t::get_reflect(void) const =0']]],
+  ['get_5fshininess_18',['get_shininess',['../classrt_1_1material__t.html#a6c5e94bef1579574d37f79316eb863c3',1,'rt::material_t::get_shininess()'],['../classrt_1_1simplemat__t.html#accdc7bb3c26f80b44a6ccc9693997a0b',1,'rt::simplemat_t::get_shininess()']]],
+  ['get_5fspecular_19',['get_specular',['../classrt_1_1material__t.html#a5995150f79e94a7f1c2c5793b2f1b749',1,'rt::material_t::get_specular()'],['../classrt_1_1simplemat__t.html#a2f7fcbd32081af7aa6836af188299897',1,'rt::simplemat_t::get_specular()']]],
+  ['get_5ftransmit_20',['get_transmit',['../classrt_1_1material__t.html#a49cca4e4209979b926ad8f917bfbd9e7',1,'rt::material_t::get_transmit()'],['../classrt_1_1simplemat__t.html#aa68cea18e26c8c352dcd55c4ee70291e',1,'rt::simplemat_t::get_transmit()']]],
+  ['get_5fup_21',['get_up',['../classrt_1_1camera__t.html#a6490001a8fd92ba454d87c6e39b12131',1,'rt::camera_t']]],
+  ['get_5fwidth_22',['get_width',['../classrt_1_1image__t.html#a9976cb06490b752bee84d34a8fdad9aa',1,'rt::image_t']]]
+];

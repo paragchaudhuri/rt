@@ -1,0 +1,4 @@
+<map id="rt::light_t" name="rt::light_t">
+<area shape="rect" id="node1" title="This is the abstract base class for lights. The light is responsible for returning its direct illumin..." alt="" coords="25,5,107,32"/>
+<area shape="rect" id="node2" href="$classrt_1_1point__light__t.html" title="This is the class for a positional point light source." alt="" coords="5,80,127,107"/>
+</map>
