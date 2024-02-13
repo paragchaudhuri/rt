@@ -1,4 +1,4 @@
-[![rt logo](https://www.cse.iitb.ac.in/~paragc/images/rt-logo-small.jpg)](https://www.cse.iitb.ac.in/~paragc/images/rt-logo-small.jpg)
+![rt logo](https://github.com/paragchaudhuri/rt/blob/master/doc/rt-logo-small.jpg?raw=true)
 
 rt is a simple ray tracer framework written in C++. 
 
