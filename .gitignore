@@ -45,7 +45,6 @@ Thumbs.db
 # Image files #
 ###############
 *.ppm
-*.jpg
 *.png
 *.bmp
 
