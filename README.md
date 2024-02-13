@@ -1,19 +1,11 @@
 [![rt logo](https://www.cse.iitb.ac.in/~paragc/images/rt-logo-small.jpg)](https://www.cse.iitb.ac.in/~paragc/images/rt-logo-small.jpg)
 
-rt is a simple ray tracer written in C++. 
-
-It provides a basic framework to complete the rendering assignments from the Advanced Computer Graphics course taught as IIT Bombay. 
+rt is a simple ray tracer framework written in C++. 
 
 ### Downloading rt
 rt can be downloaded by cloning the git repository using
 
 `git clone https://github.com/paragchaudhuri/rt.git`
-
-### Course information and framework documentation
-
-For access to course information including slides and reading material, visit the main [Advanced Computer Graphics course website](https://www.cse.iitb.ac.in/~paragc/teaching/2018/cs775). 
-
-The rt framework and coding assignments will be described on the [assignments page](www.cse.iitb.ac.in/~paragc/teaching/2018/cs775/assignment.shtml).
 
 ### Compiling and using rt
 
